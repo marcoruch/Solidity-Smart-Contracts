@@ -41,9 +41,16 @@ contract Account {
         return balance;
     }
     
+    function deposit(uint amount) public returns (bool) {
+        if (amount > 0){
+            balance = balance + amount;
+        return true;
+        }
+    }
+    
     function withdraw(uint amount) public returns (bool) {
         if (balance > amount){
-            balance =- amount;
+            balance = balance - amount;
         return true;
         }
     }
